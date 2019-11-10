@@ -1,4 +1,4 @@
-    import scrapy
+import scrapy
 import re
 
 from scrapy_selenium import SeleniumRequest
@@ -34,8 +34,22 @@ class TurnoffusSpider(scrapy.Spider):
         print(response.selector.xpath("//article/p/img"))
         print("================================")
 
-    def parse_index(self,response):
-        print(response.xpath("//h2/a").getall())
+    def parse_index(self, response):
+
+        img = response.xpath("//article/p/img/@src").get()
+        if img:
+            title = response.xpath('//h1[@class="post-title"]/text()').get()
+            img_src = response.xpath("//article/p/img/@src").get()
+            title = self.build_img_name(title, img_src)
+            img_src = self.build_img_src(img_src)
+            print(title)
+            print(img_src)
+
+        all_posts = response.xpath("//h2/a/@href").getall()
+        print(all_posts)
+        for post in all_posts[1:5]:
+            url = HOST + post
+            yield scrapy.Request(url=url, callback=self.parse_index)
 
     def parse_post(self, response):
         """default parser"""
