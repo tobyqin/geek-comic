@@ -15,7 +15,7 @@ USE_SELENIUM = False
 PROXY = '127.0.0.1:8001'
 SELENIUM_DRIVER_NAME = 'chrome'
 SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
-SELENIUM_DRIVER_ARGUMENTS=['--proxy-server=%s' % PROXY]  # '--headless' if using chrome instead of firefox
+SELENIUM_DRIVER_ARGUMENTS = ['--proxy-server=%s' % PROXY]  # '--headless' if using chrome instead of firefox
 # SELENIUM_DRIVER_ARGUMENTS=['--headless']  # '--headless' if using chrome instead of firefox
 
 BOT_NAME = 'turnoffus'
@@ -27,7 +27,7 @@ NEWSPIDER_MODULE = 'turnoffus.spiders'
 # USER_AGENT = 'turnoffus (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
