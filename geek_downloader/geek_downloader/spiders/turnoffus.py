@@ -7,7 +7,7 @@ from scrapy_selenium import SeleniumRequest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
-from ..settings import USE_SELENIUM
+from geek_downloader.settings import USE_SELENIUM
 
 HOST = 'http://turnoff.us'
 save_file = join(dirname(dirname(dirname(__file__))), 'turnoffus.json')

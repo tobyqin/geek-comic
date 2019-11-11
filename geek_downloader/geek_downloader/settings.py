@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for turnoffus project
+# Scrapy settings for geek_downloader project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -8,6 +8,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+
 
 from shutil import which
 
@@ -18,16 +19,17 @@ SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
 SELENIUM_DRIVER_ARGUMENTS = ['--proxy-server=%s' % PROXY]  # '--headless' if using chrome instead of firefox
 # SELENIUM_DRIVER_ARGUMENTS=['--headless']  # '--headless' if using chrome instead of firefox
 
-BOT_NAME = 'turnoffus'
 
-SPIDER_MODULES = ['turnoffus.spiders']
-NEWSPIDER_MODULE = 'turnoffus.spiders'
+BOT_NAME = 'geek_downloader'
+
+SPIDER_MODULES = ['geek_downloader.spiders']
+NEWSPIDER_MODULE = 'geek_downloader.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'turnoffus (+http://www.yourdomain.com)'
+# USER_AGENT = 'geek_downloader (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # CONCURRENT_REQUESTS = 32
@@ -55,20 +57,19 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'turnoffus.middlewares.TurnoffusSpiderMiddleware': 543,
+#    'geek_downloader.middlewares.GeekDownloaderSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'turnoffus.middlewares.TurnoffusDownloaderMiddleware': 543,
+#    'geek_downloader.middlewares.GeekDownloaderDownloaderMiddleware': 543,
 # }
 
 if USE_SELENIUM:
     DOWNLOADER_MIDDLEWARES = {
         'scrapy_selenium.SeleniumMiddleware': 800
     }
-
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 # EXTENSIONS = {
@@ -78,7 +79,7 @@ if USE_SELENIUM:
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 # ITEM_PIPELINES = {
-#    'turnoffus.pipelines.TurnoffusPipeline': 300,
+#    'geek_downloader.pipelines.GeekDownloaderPipeline': 300,
 # }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

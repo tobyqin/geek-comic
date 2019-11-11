@@ -1,11 +1,12 @@
 import json
 import os
-from os.path import dirname, join, exists
+from os.path import dirname, join, exists, abspath
 
 import requests
 
 site_name = 'turnoffus'
-download_dir = join(dirname(dirname(__file__)), 'download', site_name)
+project_dir = abspath(dirname(dirname(__file__)))
+download_dir = join(project_dir, '@download', site_name)
 data_file = join(dirname(__file__), '{}.json'.format(site_name))
 
 if not exists(download_dir):
