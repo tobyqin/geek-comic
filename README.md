@@ -1,6 +1,6 @@
-# geek comics
+# geek-comics
 
-Spider to download geek comics and fun programmer pictures.
+Spider to download geek comics and funny programmer pictures.
 
 ## project structure
 
@@ -34,10 +34,11 @@ scrapy crawl turnoffus
 python downloder.py
 ```
 
-## turnoff.us
+## download source 
 
-You will be able to get all the comic from turnoff.us at download folder, I download it via scrapy.∂
+- turnoff.us: one of my favourite geek comics site, easy to download.
+- geek-and-poke.com: another very good website for geek comics.
 
 ## copyright
 
-The site owners and authors have the full copyright of the comics, this repo is just for fun, no commercial use allowed.
+The site owners and comic authors have the full copyright of the comics, this repo is just for fun, no commercial use allowed.
