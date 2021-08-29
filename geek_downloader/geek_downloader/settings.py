@@ -13,7 +13,7 @@
 from shutil import which
 
 USE_SELENIUM = False
-PROXY = '127.0.0.1:8001'
+PROXY = '127.0.0.1:8003'
 SELENIUM_DRIVER_NAME = 'chrome'
 SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
 SELENIUM_DRIVER_ARGUMENTS = ['--proxy-server=%s' % PROXY]  # '--headless' if using chrome instead of firefox
